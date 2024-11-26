@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Doces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Loja de Doces</h1>
+        <div id="cart-icon" onclick="toggleCart()">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Fbr%2Ficone-gratis%2Fcarrinho-de-compras_126510&psig=AOvVaw0x9vrKKAD3Cn2fqBNxUAMs&ust=1732737529843000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiv4Lnk-okDFQAAAAAdAAAAABAE" alt="Carrinho">
+        </div>
+    </header>
+
+    <div id="notification" class="hidden"></div>
+
+    <div class="container">
+        <div class="products" id="product-list">
+            <!-- Produtos serão carregados aqui dinamicamente -->
+        </div>
+    </div>
+
+    <!-- Detalhes do carrinho -->
+    <div id="cart-details">
+        <h2>Seu Carrinho</h2>
+        <div id="cart-items">
+            <!-- Itens do carrinho serão exibidos aqui -->
+        </div>
+        <div class="finalize-button" onclick="finalizeOrder()">Finalizar Pedido</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
