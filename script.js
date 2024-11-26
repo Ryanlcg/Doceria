@@ -15,17 +15,21 @@ const cart = [];
 
 function loadProducts() {
     const productList = document.getElementById('product-list');
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>R$ ${product.price.toFixed(2)}</p>
-            <button onclick="addToCart(${product.id})">Adicionar</button>
-        `;
-        productList.appendChild(productCard);
-    });
+    if (productList) {  // Verificando se o elemento existe antes de manipular
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>R$ ${product.price.toFixed(2)}</p>
+                <button onclick="addToCart(${product.id})">Adicionar</button>
+            `;
+            productList.appendChild(productCard);
+        });
+    } else {
+        console.error("Não foi possível encontrar o elemento de lista de produtos.");
+    }
 }
 
 function showNotification(message) {
@@ -65,6 +69,12 @@ function updateCart() {
         `;
         cartItems.appendChild(div);
     });
+    updateTotal();
+}
+
+function updateTotal() {
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    document.getElementById('cart-total').textContent = total.toFixed(2);
 }
 
 function finalizeOrder() {
@@ -85,6 +95,10 @@ function finalizeOrder() {
 function toggleCart() {
     const cartDetails = document.getElementById('cart-details');
     cartDetails.style.display = cartDetails.style.display === 'block' ? 'none' : 'block';
+}
+
+function goToCart() {
+    toggleCart(); // Abre o carrinho ao clicar no botão "Ir para o Carrinho"
 }
 
 // Carrega os produtos ao abrir a página
