@@ -107,18 +107,24 @@ window.onload = loadProducts;
 window.addEventListener("load", function () {
     // Exibe os produtos ao carregar a página
     loadProducts();
-});
 
-window.addEventListener("load", function () {
-    // Adiciona os alertas e prompts
-    alert("Bem-vindo à Loja de Doces! Por favor, faça login para continuar.");
-    const email = prompt("Digite seu email:");
-    const senha = prompt("Digite sua senha:");
+    let nome, email;
 
-    if (email && senha) {
-        alert(`Olá, ${email}! Aproveite suas compras na Loja de Doces!`);
-    } else {
-        alert("Você precisa fornecer um email e senha para acessar todos os recursos.");
+    // Loop para garantir que o usuário forneça respostas válidas
+    while (!nome || !email) {
+        // Solicita o nome e o email
+        nome = prompt("Digite seu nome:");
+        email = prompt("Digite seu email:");
+
+        // Caso algum campo seja inválido, o loop continuará pedindo
+        if (!nome || !email) {
+            alert("Você precisa fornecer seu nome e email.");
+        }
     }
-});
 
+    // Se todas as informações foram fornecidas corretamente, mostra a mensagem
+    alert(`Olá, ${nome}! Seu email (${email}) foi registrado. Quando tivermos promoções, avisaremos você.`);
+    
+    // Aqui você pode processar o nome e email (ex: salvar em um banco de dados)
+    console.log(`O usuário ${nome} (${email}) foi registrado para receber promoções.`);
+});
