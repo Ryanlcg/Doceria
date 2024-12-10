@@ -104,3 +104,21 @@ function goToCart() {
 }
 
 window.onload = loadProducts;
+window.addEventListener("load", function () {
+    // Exibe os produtos ao carregar a página
+    loadProducts();
+});
+
+window.addEventListener("load", function () {
+    // Adiciona os alertas e prompts
+    alert("Bem-vindo à Loja de Doces! Por favor, faça login para continuar.");
+    const email = prompt("Digite seu email:");
+    const senha = prompt("Digite sua senha:");
+
+    if (email && senha) {
+        alert(`Olá, ${email}! Aproveite suas compras na Loja de Doces!`);
+    } else {
+        alert("Você precisa fornecer um email e senha para acessar todos os recursos.");
+    }
+});
+
