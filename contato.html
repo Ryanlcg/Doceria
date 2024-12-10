@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Loja de Doces</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #hamburger-menu {
+            font-size: 2em;
+            cursor: pointer;
+            color: #333;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffeb3b;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #menu ul li {
+            margin-bottom: 10px;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #menu.hidden {
+            display: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff6f00;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        form button {
+            background-color: #ffeb3b;
+            color: #333;
+            border: 1px solid #fbc02d;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            align-self: flex-start;
+        }
+
+        form button:hover {
+            background-color: #ffe082;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #ff6f00;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+.back-button {
+    background-color: #ffeb3b;
+    color: #333;
+    border: 1px solid #fbc02d;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Posiciona o botão fora do fluxo normal do layout */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da borda direita */
+    display: inline-block;
+}
+
+.back-button:hover {
+    background-color: #ffe082;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Loja de Doces</h1>
+        <div id="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="hidden">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                               <li><a href="faq.html">FAQ</a></li>
+ <li><a href="sobre.html">Sobre Nós</a></li>
+
+                           </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <form id="contact-form">
+            <label for="name">Seu Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+            <label for="email">Seu Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="social-links">
+            <h3>Ou entre em contato pelas redes sociais:</h3>
+            <a href="https://wa.me/5521976446705" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com/sualoja" target="_blank">Instagram</a>
+            <a href="mailto:contato@sualoja.com">Email</a>
+        </div>
+    </div>
+
+     <!-- Botão de Voltar (ele ficará no canto inferior direito) -->
+    <button onclick="window.history.back()" class="back-button">Voltar</button>
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Simulação do envio de formulário
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Sua mensagem foi enviada com sucesso!');
+            form.reset();
+        });
+    </script>
+</body>
+</html>

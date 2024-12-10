@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Loja de Doces</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #hamburger-menu {
+            font-size: 2em;
+            cursor: pointer;
+            color: #333;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffeb3b;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #menu ul li {
+            margin-bottom: 10px;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #menu.hidden {
+            display: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff6f00;
+            text-align: center;
+        }
+
+        .about-section {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .team-section {
+            margin-top: 30px;
+        }
+
+        .team-section h3 {
+            color: #ff6f00;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 100px;
+        }
+
+        .team-member h4 {
+            margin: 10px 0 5px;
+        }
+
+        .team-member p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+.back-button {
+    background-color: #ffeb3b;
+    color: #333;
+    border: 1px solid #fbc02d;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Posiciona o botão fora do fluxo normal do layout */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da borda direita */
+    display: inline-block;
+}
+
+
+.back-button:hover {
+    background-color: #ffe082;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Loja de Doces</h1>
+        <div id="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="hidden">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Sobre Nós</h2>
+        <div class="about-section">
+            <p>
+                Bem-vindo à <strong>Loja de Doces</strong>! Desde a nossa fundação, temos a missão de adoçar a vida dos nossos clientes
+                com doces preparados com amor e dedicação. Nossa história começou com o sonho de trazer sabores autênticos e
+                qualidade artesanal para cada mordida. Hoje, somos reconhecidos por oferecer produtos deliciosos e um atendimento
+                impecável, sempre com o objetivo de superar as expectativas de quem confia no nosso trabalho.
+            </p>
+            <p>
+                Trabalhamos com ingredientes selecionados para garantir que cada doce seja uma experiência única. Além disso, estamos
+                comprometidos com práticas sustentáveis e o apoio à comunidade local, fortalecendo o nosso compromisso com um futuro mais doce para todos.
+            </p>
+        </div>
+
+        <div class="team-section">
+            <h3>Nosso Time</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="imagens/joao1.jpeg" alt="João Silva">
+                    <h4>João Silva</h4>
+                    <p>Fundador e Chef</p>
+                </div>
+                <div class="team-member">
+                    <img src="imagens/maria1.jpeg" alt="Maria Souza">
+                    <h4>Maria Souza</h4>
+                    <p>Gerente de Marketing</p>
+                </div>
+                <div class="team-member">
+                    <img src="imagens/ana1.jpeg" alt="Ana Costa">
+                    <h4>Ana Costa</h4>
+                    <p>Especialista em Atendimento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    <button onclick="window.history.back()" class="back-button">Voltar</button>
+</footer>
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
